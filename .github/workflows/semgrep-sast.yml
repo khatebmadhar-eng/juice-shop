@@ -10,7 +10,7 @@ jobs:
       - name: Checkout repository 
         uses: actions/checkout@v4
 
-      - name: Run Semgrep SAST Scan (تشغيل فحص Semgrep)
+      - name: Run Semgrep SAST Scan 
         uses: returntocorp/semgrep-action@v1
         with:
           config: p/default
