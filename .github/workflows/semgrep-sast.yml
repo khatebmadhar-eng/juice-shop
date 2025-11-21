@@ -1,0 +1,19 @@
+name: Semgrep SAST Scan
+
+on: [push]
+
+jobs:
+  semgrep:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository 
+        uses: actions/checkout@v4
+
+      - name: Run Semgrep SAST Scan (تشغيل فحص Semgrep)
+        uses: returntocorp/semgrep-action@v1
+        with:
+          config: p/default
+          
+      - name: Log results 
+        run: echo "Semgrep scan finished. Check the previous step logs for vulnerability details."
